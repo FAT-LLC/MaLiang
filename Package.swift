@@ -25,7 +25,10 @@ let package = Package(
         .target(
             name: "MaLiang",
             dependencies: [],
-            path: "./MaLiang/Classes"
+            path: "./MaLiang/Classes",
+            resources: [
+                .process("Resources/Shaders.metal")
+            ]
         )
     ]
 )
