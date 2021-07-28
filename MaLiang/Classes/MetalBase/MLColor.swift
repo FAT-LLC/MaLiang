@@ -35,9 +35,9 @@ public struct MLColor: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let hexString = try container.decode(String.self)
-        var int = UInt32()
-        Scanner(string: hexString).scanHexInt32(&int)
-        let a, r, g, b: UInt32
+        var int = UInt64()
+        Scanner(string: hexString).scanHexInt64(&int)
+        let a, r, g, b: UInt64
         (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         (alpha, red, green, blue) = (Float(a) / 255.0, Float(r) / 255.0, Float(g) / 255.0, Float(b) / 255.0)
     }
